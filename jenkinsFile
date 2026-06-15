@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'
+        maven 'Maven'
     }
 
     stages {
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run Selenium') {
             steps {
-                sh 'mvn exec:java -Dexec.mainClass=”com.example.App”'
+                sh 'mvn clean compile exec:java -Dexec.mainClass="com.example.App"'
             }
         }
     }
